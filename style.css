@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: rgb(85, 85, 85);
+    font-family: 'Oxygen', sans-serif;
+}
+main{
+    display: flex;
+    overflow: hidden;
+}
+.burger-menu{
+    font-size: 30px;
+}
+.clock{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 22px;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    color: rgb(241, 241, 241);
+}
+.menu{
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    width: 100px;
+    background-color: rgb(241, 241, 241);
+    transition: 1s;
+    transform: translateX(-120px);
+}
+.menu-active{
+    display: flex;
+    transform: translateX(0px);
+}
+.fa-sticky-note, .fa-calendar-alt{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.menu-buttons
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.menu button{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background: none;
+}
+
+.note-popup .save, .note-popup .cancel{
+    padding: 12px 25px;
+    background: none;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.menu button:hover, .note-popup .save:hover, .note-popup .cancel:hover {
+    background-color: rgb(41, 41, 41);
+    color: rgb(230, 230, 230);
+}
+
+.note-area{
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.note{
+    margin: 40px 20px;
+    width: 230px;
+    max-height: 250px;
+    background-color: rgb(255, 245, 56);
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.note-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(0,0,0,.15);
+}
+
+.note-header .delete-note{
+    background: none;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.note-body{
+    padding: 20px 15px;
+    font-size: 14px;
+}
+
+.note-popup{
+    display:none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 0;
+    width: 450px;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 0 12px black;
+    border-radius: 5px;
+}
+
+.note-popup h3{
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.note-popup label{
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.note-popup #text,
+.note-popup #category{
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 90%;
+    max-height: 300px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.note-popup .error{
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: red;
+    visibility: hidden;
+}
+
+.active{
+    display: flex;
+}
+
+
+/* Weather widget*/
+
+.weather-widget{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 398px;
+    height: 150px;
+    background-color: #fff;
+    display: flex;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 99;
+    box-shadow: 0 0 15px black;
+}
+
+.weather-left, .weather-middle, .weather-right{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 166px;
+}
+
+.part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    overflow: hidden;
+}
+.weather-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-img
+{
+    width: 60px;
+}
