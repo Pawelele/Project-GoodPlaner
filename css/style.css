@@ -84,6 +84,7 @@ main{
 .note-area{
     display: flex;
     align-items: start;
+    align-content: flex-start;
     flex-wrap: wrap;
     padding: 20px;
 }
