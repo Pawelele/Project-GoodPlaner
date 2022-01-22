@@ -5,7 +5,7 @@
 }
 body{
     height: 100vh;
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(71, 71, 71);
     font-family: 'Oxygen', sans-serif;
 }
 main{
@@ -14,6 +14,8 @@ main{
 }
 .burger-menu{
     font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 .clock{
     position: absolute;
@@ -34,6 +36,7 @@ main{
     background-color: rgb(241, 241, 241);
     transition: 1s;
     transform: translateX(-120px);
+    box-shadow: 0 0 10px black;
 }
 .menu-active{
     display: flex;
@@ -48,16 +51,18 @@ main{
 {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 .menu button{
     width: 70px;
     height: 70px;
     margin-bottom: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid gray;
     background: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .note-popup .save, .note-popup .cancel{

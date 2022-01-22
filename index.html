@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodPlaner</title>
-    <link rel="stylesheet" href="style.css">
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -23,8 +23,8 @@
         <nav class="menu">
             <i class="far fa-sticky-note"></i>
             <div class="menu-buttons">
-                <button class="icon add">Dodaj</button>
-                <button class="icon delete-all">Usuń wszystkie</button>
+                <button class="add">Dodaj</button>
+                <button class="delete-all">Usuń wszystkie</button>
             </div>
         </nav>
 
@@ -66,8 +66,8 @@
         <h3>Dodawanie notatki</h3>
         <label for="category">Wybierz kategorię</label>
         <select id="category">
-            <option value="0" disabled selected>- wybierz kategorię -</option>
-            <option value="1">Zakupy</option>
+            <option value="0" disabled selected>wybierz kategorię</option>
+            <option value="1">Dom</option>
             <option value="2">Praca</option>
             <option value="3">Inne</option>
         </select>
