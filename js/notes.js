@@ -30,8 +30,7 @@ const checkForm = () => {
 
     noteClose = document.querySelectorAll('.delete-note');
     noteClose.forEach(el => {
-        const current = el.closest('.note');
-        current.addEventListener('click', deleteNote)
+        el.addEventListener('click', deleteNote)
     })
 
     allNotes = document.querySelectorAll('.note');
