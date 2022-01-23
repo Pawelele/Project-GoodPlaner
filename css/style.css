@@ -118,6 +118,9 @@ main{
     overflow: auto;
     border-radius: 5px;
 }
+.note-hide{
+    display: none;
+}
 
 .note-header{
     display: flex;

@@ -101,11 +101,11 @@ const searchNote = () => {
     {
         if(el.textContent.indexOf(searchBar.value) >= 0)
         {
-            el.closest('.note').style.display='inline';
+            el.closest('.note').classList.remove('note-hide');
         }
         else
         {
-            el.closest('.note').style.display = 'none';
+            el.closest('.note').classList.add('note-hide');
         }
     }
 }
@@ -125,5 +125,3 @@ notePanelCancel.addEventListener('click', () => {
 })
 
 searchBar.addEventListener('input', searchNote);
-
-
