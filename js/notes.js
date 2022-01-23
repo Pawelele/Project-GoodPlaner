@@ -14,6 +14,9 @@ let noteCounter = 1;
 
 let allNotes = document.querySelectorAll('.note');
 
+const searchBar = document.querySelector('.search');
+const allNotesContent = document.getElementsByClassName('note-body');
+
 
 
 // Functions
@@ -38,6 +41,7 @@ const checkForm = () => {
         allNotes.forEach(el => {
             el.remove();
         })
+        noteCounter = 1;
     })
 }
 
@@ -59,7 +63,7 @@ const addNote = (category, note) => {
     noteHeader.append(deleteNote);
     noteAll.append(noteBody);
 
-    noteTitle.textContent = `Notatka #${noteCounter}`;
+    noteTitle.textContent = `Notatka ${noteCounter}`;
     deleteNote.innerHTML = '<i class="fas fa-times icon"></i>';
     noteBody.textContent = note;
 
@@ -83,6 +87,7 @@ const addNote = (category, note) => {
 const deleteNote = (e) => {
     const currentNote = e.target.closest('.note');
     currentNote.remove();
+    noteCounter--;
 }
 
 
@@ -91,7 +96,19 @@ const showError = (message) => {
     notePanelError.style.visibility = 'visible';
 }
 
-
+const searchNote = () => {
+    for(const el of allNotesContent)
+    {
+        if(el.textContent.indexOf(searchBar.value) >= 0)
+        {
+            el.closest('.note').style.display='inline';
+        }
+        else
+        {
+            el.closest('.note').style.display = 'none';
+        }
+    }
+}
 
 // Event Listeners
 addBtn.addEventListener('click', () => {
@@ -106,4 +123,7 @@ notePanelCancel.addEventListener('click', () => {
     notePanelNote.value = '';
     notePanelError.style.visibility = 'hidden';
 })
+
+searchBar.addEventListener('input', searchNote);
+
 

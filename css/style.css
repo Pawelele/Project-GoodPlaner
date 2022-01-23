@@ -12,10 +12,9 @@ main{
     display: flex;
     overflow: hidden;
 }
-.burger-menu{
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+.main-area{
+    display: flex;
+    flex-direction: column;
 }
 .clock{
     position: absolute;
@@ -25,6 +24,27 @@ main{
     letter-spacing: 1.3px;
     font-weight: 600;
     color: rgb(241, 241, 241);
+}
+.top{
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 30px;
+}
+.burger-menu{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.search{
+    width: 200px;
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding: 0px 10px;
+    font-size: 16px;
 }
 .menu{
     display: none;
@@ -87,6 +107,7 @@ main{
     align-content: flex-start;
     flex-wrap: wrap;
     padding: 20px;
+    margin-left: 25px;
 }
 
 .note{

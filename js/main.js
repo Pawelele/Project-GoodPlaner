@@ -12,7 +12,6 @@ const showDate = () => {
     const hours = date.getHours()<=9 ? '0' + date.getHours() : date.getHours();
     const minutes = date.getMinutes()<=9 ? '0' + date.getMinutes() : date.getMinutes();
 
-    console.log('show');
     clock.textContent = `${day}.${month}.${year} ${hours}:${minutes}`;
 }
 
