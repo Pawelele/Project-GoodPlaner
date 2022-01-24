@@ -99,7 +99,7 @@ const showError = (message) => {
 const searchNote = () => {
     for(const el of allNotesContent)
     {
-        if(el.textContent.indexOf(searchBar.value) >= 0)
+        if(el.textContent.toLowerCase().indexOf(searchBar.value.toLowerCase()) >= 0)
         {
             el.closest('.note').classList.remove('note-hide');
         }
