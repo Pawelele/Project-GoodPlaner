@@ -4,13 +4,22 @@ const humidity = document.querySelector('.weather-humidity');
 const pressure = document.querySelector('.weather-pressure');
 const weatherIcon = document.querySelector('.weather-img');
 
+// weather settings
+const weatherChangeSection = document.querySelector('.weather-change')
+const weatherSettingsBtn = document.querySelector('.weather-settings');
+const weatherSettingsInput = document.querySelector('.weather-change-input');
+const weatherSettingsSubmit = document.querySelector('.weather-change-button');
+let currentCity = 'Katowice';
+
+
+// Weather API
 const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const API_KEY = '&appid=38ee23d28167d91ea9c6263c8241e6ff';
 const API_UNITS = '&units=metric';
 const API_LANGUAGE = '&lang=pl';
 
 const getWeather = () => {
-    const city = "Katowice";
+    const city = currentCity;
     const URL = API_LINK + city + API_KEY + API_UNITS + API_LANGUAGE;
 
     axios.get(URL).then(res => {
@@ -57,6 +66,20 @@ const getWeather = () => {
 
     })
 }
+
+// change city
+
+const changeCity = () => {
+    currentCity = weatherSettingsInput.value;
+
+        getWeather();
+        weatherChangeSection.classList.remove('weather-change-active');
+}
+
+// EventListeners
+weatherSettingsSubmit.addEventListener('click', changeCity);
+weatherSettingsBtn.addEventListener('click', () => weatherChangeSection.classList.toggle('weather-change-active'));
+
 
 getWeather();
 window.setInterval(getWeather, 60000);

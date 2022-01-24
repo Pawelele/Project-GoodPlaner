@@ -15,13 +15,12 @@ const showDate = () => {
     clock.textContent = `${day}.${month}.${year} ${hours}:${minutes}`;
 }
 
-const showMenu = () => {
-    menu.classList.toggle('menu-active');
+const toggleMenu = () => {
+    menu.classList.toggle('menu-hide');
 }
 
 
-menuBurger.addEventListener('click', showMenu);
+menuBurger.addEventListener('click', toggleMenu);
 
-showMenu();
 showDate();
 window.setInterval(showDate, 5000);
