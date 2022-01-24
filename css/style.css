@@ -11,8 +11,6 @@ body{
 main{
     display: flex;
     overflow: hidden;
-    width: 100vh;
-    height: 100vh;
 }
 .main-area{
     display: flex;
