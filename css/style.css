@@ -61,16 +61,20 @@ main{
     transform: translateX(-120px);
     display: none;
 }
+.logo{
+    width: 90%;
+    margin: 20px 5% 10px 5%;
+    text-align: center;
+
+}
 .fa-sticky-note, .fa-calendar-alt{
     font-size: 35px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .menu-buttons{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 .menu button{
     width: 70px;
@@ -79,9 +83,10 @@ main{
     background: none;
     border: 2px solid black;
     border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
+    background-color: rgb(226, 226, 226);
     color: black;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .note-popup .save, .note-popup .cancel{
@@ -134,6 +139,7 @@ main{
     font-size: 18px;
     border: none;
     cursor: pointer;
+    color: black;
 }
 
 .note-body{
@@ -155,6 +161,7 @@ main{
     background-color: rgb(250, 250, 250);
     box-shadow: 0 0 12px black;
     border-radius: 5px;
+    z-index: 99;
 }
 
 .note-popup h3{
@@ -166,6 +173,10 @@ main{
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: 600;
+}
+.note-popup button{
+    color: black;
+    cursor: pointer;
 }
 
 .note-popup #text,
@@ -179,6 +190,7 @@ main{
     border-radius: 5px;
     border: 1px solid black;
     text-align: center;
+    color: black;
 }
 
 .note-popup .error{
@@ -200,11 +212,12 @@ main{
     display: flex;
     right: 20px;
     bottom: 20px;
-    background-color: #fff;
+    background-color: rgb(36, 175, 255);
+    color: white;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 600;
-    z-index: 99;
+    z-index: 98;
     box-shadow: 0 0 15px black;
 }
 
@@ -235,7 +248,7 @@ main{
     position: absolute;
     right: 10px;
     top: 10px;
-    color: black;
+    color: white;
     font-size: 20px;
     cursor: pointer;
 }
@@ -263,6 +276,8 @@ main{
     height: 30px;
     width: 60px;
     padding: 5px;
+    color: black;
+    background-color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 15px;
@@ -276,6 +291,9 @@ main{
 @media(max-width: 600px){
     .clock{
         display: none;
+    }
+    .note-popup{
+        width: 300px;
     }
 }
 
@@ -308,5 +326,26 @@ main{
     }
     .weather-left, .weather-middle, .weather-right{
         height: 90px;
+    }
+    .weather-settings{
+        right: 3px;
+        top: 3px;
+    }
+    .weather-change-input{
+        top: -40px;
+        left: 0px;
+        height: 30px;
+        width: 130px;
+    }
+    .weather-change-button{
+        top: -80px;
+        left: 35px;
+        height: 30px;
+        width: 60px;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
     }
 }
