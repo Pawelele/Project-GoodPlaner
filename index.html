@@ -15,12 +15,55 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+
     <script src="js/main.js" defer></script>
     <script src="js/notes.js" defer></script>
     <script src="js/weather.js" defer></script>
+    <script src="js/events.js" defer></script>
 
 </head>
 <body>
+    <!-- Note Popup -->
+    <div class="note-popup">
+        <h3>Dodawanie notatki</h3>
+        <label for="category">Kategoria</label>
+        <select id="category">
+            <option value="0" disabled selected>wybierz kategorię</option>
+            <option value="1">Dom</option>
+            <option value="2">Praca</option>
+            <option value="3">Inne</option>
+        </select>
+
+        <label for="text">Treść notatki</label>
+        <textarea id="text"></textarea>
+
+        <p class="error">Uzupełnij wszystkie pola!</p>
+
+        <div class="note-popup-buttons">
+            <button class="save">Dodaj</button>
+            <button class="cancel">Anuluj</button>
+        </div>
+    </div>
+    <!-- Event Popup -->
+    <div class="event-popup">
+        <h3>Dodawanie wydarzenia</h3>
+        <label for="event-name">Nazwa wydarzenia</label>
+        <input type="text" id="event-name">
+
+        <div class="event-info">
+            <input type="number" id="event-day" maxlength="2" placeholder="Dzień">
+            <input type="number" id="event-month" placeholder="Miesiąc" maxlength="2">
+            <input type="number" id="event-year" placeholder="Rok" maxlength="4" minlength="4">
+        </div>
+
+        <p class="error">Uzupełnij wszystkie pola!</p>
+
+        <div class="event-popup-buttons">
+            <button class="save">Dodaj</button>
+            <button class="cancel">Anuluj</button>
+        </div>
+    </div>
+
     <main>
         <div class="clock">
             <p>21.09.22 16:59</p>
@@ -33,6 +76,11 @@
                 <button class="add">Dodaj</button>
                 <button class="delete-all">Usuń wszystkie</button>
             </div>
+            <i class="far fa-calendar-alt"></i>
+            <div class="menu-buttons">
+                <button class="add-event">Dodaj</button>
+            </div>
+
         </nav>
 
         <section class="main-area">
@@ -56,7 +104,32 @@
 
         </section>
 
-        <section class="weather-widget">
+
+        <!-- <div class="event-widget">
+            <h4 class="event-widget-name">Nazwa wydarzenia</h4>
+
+            <h5 class="event-widget-name">Pozostało:</h5>
+            <div class="counter">
+                <div class="time">
+                    <p class="days-counter number">1</p>
+                    <p class="number-description">Dni</p>
+                </div>
+                <div class="time">
+                    <p class="hours-counter number">15</p>
+                    <p class="number-description">Godzin</p>
+                </div>
+                <div class="time">
+                    <p class="minutes-counter number">1</p>
+                    <p class="number-description">Minut</p>
+                </div>
+                <div class="time">
+                    <p class="seconds-counter number">1</p>
+                    <p class="number-description">Sekund</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="weather-widget">
             <div class="weather-left">
                 <div class="weather-city part"><h3></h3></div>
                 <div class="weather-temperature part"></div>
@@ -73,29 +146,8 @@
                 <input type="text" class="weather-change-input" placeholder="Podaj miasto">
                 <button class="weather-change-button">Zapisz</button>
             </div>
-        </section>
+        </div>
 
     </main>
-
-    <div class="note-popup">
-        <h3>Dodawanie notatki</h3>
-        <label for="category">Kategoria</label>
-        <select id="category">
-            <option value="0" disabled selected>wybierz kategorię</option>
-            <option value="1">Dom</option>
-            <option value="2">Praca</option>
-            <option value="3">Inne</option>
-        </select>
-
-        <label for="text">Treść notatki</label>
-        <textarea id="text"></textarea>
-
-        <p class="error">Uzupełnij wszystkie pola!</p>
-
-        <div class="note-popup-buttons">
-            <button class="save">Dodaj</button>
-            <button class="cancel">Anuluj</button>
-        </div>
-    </div>
 </body>
 </html>

@@ -20,6 +20,7 @@ const toggleMenu = () => {
 }
 
 
+//EventListeners
 menuBurger.addEventListener('click', toggleMenu);
 
 showDate();

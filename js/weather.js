@@ -4,7 +4,7 @@ const humidity = document.querySelector('.weather-humidity');
 const pressure = document.querySelector('.weather-pressure');
 const weatherIcon = document.querySelector('.weather-img');
 
-// weather settings
+// weather settings variables
 const weatherChangeSection = document.querySelector('.weather-change')
 const weatherSettingsBtn = document.querySelector('.weather-settings');
 const weatherSettingsInput = document.querySelector('.weather-change-input');
@@ -68,13 +68,13 @@ const getWeather = () => {
 }
 
 // change city
-
 const changeCity = () => {
     currentCity = weatherSettingsInput.value;
 
         getWeather();
         weatherChangeSection.classList.remove('weather-change-active');
 }
+
 
 // EventListeners
 weatherSettingsSubmit.addEventListener('click', changeCity);
