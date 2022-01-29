@@ -415,6 +415,24 @@ main{
     .note-popup{
         width: 300px;
     }
+    .event-popup{
+        width: 300px;
+    }
+    .event-info{
+        width: 100%;
+    }
+    .event-info input{
+        height: 30px;
+        width: 80px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .event-widget{
+        margin-top: 20px;
+    }
+
 }
 
 @media(max-width: 550px){
