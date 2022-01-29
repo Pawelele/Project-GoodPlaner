@@ -44,7 +44,9 @@ const createEvent = () => {
     minutesCount = eventWidget.querySelector('.minutes-counter');
     secondsCount = eventWidget.querySelector('.seconds-counter');
 
-    eventTime = new Date(`${eventMonth.value} ${eventDay.value} ${eventYear.value}`);
+    // .raplace line added, because standard version don't work on Safari.
+    eventTime = new Date(`${eventMonth.value}-${eventDay.value}-${eventYear.value}`.replace(/-/g, "/"));
+    console.log(eventTime);
 
     countTime();
     document.body.append(eventWidget);
