@@ -21,6 +21,8 @@ let userTime;
 let eventTime;
 let eventWidget;
 
+let eventWidgetCounter = 0;
+
 const handlePopup = () => {
     eventPopup.classList.toggle('active');
 }
@@ -30,10 +32,13 @@ const checkData = () => {
     {
         eventError.style.visibility = "visible";
     }
-    else{
+    else if(eventWidgetCounter == 0){
         eventError.style.visibility = "hidden";
         createEvent();
         eventPopup.classList.remove('active');
+    }
+    else{
+        alert("Mozesz stworzyć tylko jedno wydarzenie!");
     }
 }
 
@@ -51,6 +56,11 @@ const createEvent = () => {
     countTime();
     setInterval(countTime,1000)
     document.body.append(eventWidget);
+    eventWidgetCounter++;
+
+    // function for removing the
+    const eventRemove = eventWidget.querySelector('.event-close');
+    eventRemove.addEventListener('click', removeEvent);
 }
 
 const countTime = (eventWidget) => {
@@ -73,7 +83,8 @@ const createEventWidget = () => {
     const eventWidget = document.createElement('div');
     eventWidget.classList.add('event-widget');
 
-    eventWidget.innerHTML = `<h4 class="event-widget-name">${eventName.value}</h4>
+    eventWidget.innerHTML = `<i class="fas fa-times event-close"></i>
+    <h4 class="event-widget-name">${eventName.value}</h4>
     <h5 class="event-widget-name">Pozostało:</h5>
     <div class="counter">
         <div class="time">
@@ -95,6 +106,15 @@ const createEventWidget = () => {
     </div>`;
 
     return eventWidget;
+}
+
+const removeEvent = (e) => {
+    console.log(e.target.classList);
+    if(e.target.classList.contains('event-close'))
+    {
+        e.target.closest('.event-widget').remove();
+        eventWidgetCounter = 0;
+    }
 }
 
 // EventListeners

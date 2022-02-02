@@ -279,6 +279,12 @@ main{
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,.6);
 }
+.event-close{
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    cursor: pointer;
+}
 .event-widget-name{
     margin-top: 20px;
     margin-bottom: 10px;
