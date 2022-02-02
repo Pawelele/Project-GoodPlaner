@@ -44,11 +44,12 @@ const createEvent = () => {
     minutesCount = eventWidget.querySelector('.minutes-counter');
     secondsCount = eventWidget.querySelector('.seconds-counter');
 
-    // .raplace line added, because standard version don't work on Safari.
+    // .raplace added, because standard version don't work on Safari.
     eventTime = new Date(`${eventMonth.value}-${eventDay.value}-${eventYear.value}`.replace(/-/g, "/"));
     console.log(eventTime);
 
     countTime();
+    setInterval(countTime,1000)
     document.body.append(eventWidget);
 }
 
@@ -107,5 +108,3 @@ eventCancelBtn.addEventListener('click', () => {
     eventMonth.textContent = '';
     eventYear.textContent = '';
 })
-
-setInterval(countTime,1000)
